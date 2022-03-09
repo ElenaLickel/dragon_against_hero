@@ -2,17 +2,26 @@ import random
 
 try:
     hero_hp = int(input("how many hp does the hero have?"))
-    dragon_hp = int(input("how many hp does the dragon have?"))
-    hero_max_dmg = int(input("what is the maximum damage the hero can cause?"))
-    dragon_max_dmg = int(input("what is the maximum damage the dragon can cause?"))
-    print('Thank you for your input\n')
-except:
-    print('Input was not correct, hardcoded values will be used for this game: \n')
+except ValueError:
+    print('Input was not correct, hardcoded values will be used for this game. \n')
     hero_hp = 50
+try:
+    dragon_hp = int(input("how many hp does the dragon have?"))
+except ValueError:
+    print('Input was not correct, hardcoded values will be used for this game. \n')
     dragon_hp = 100
+try:
+    hero_max_dmg = int(input("what is the maximum damage the hero can cause?"))
+except ValueError:
+    print('Input was not correct, hardcoded values will be used for this game. \n')
     hero_max_dmg = 10
+try:
+    dragon_max_dmg = int(input("what is the maximum damage the dragon can cause?"))
+except ValueError:
+    print('Input was not correct, hardcoded values will be used for this game. \n')
     dragon_max_dmg = 20
 finally:
+    print('Thank you for your input\n')
     print("The dragon with", dragon_hp, "hp attacks out hero with", hero_hp, "hp")
     print("The dragon can cause maximum damages of", dragon_max_dmg, ", while the hero can attacks with maximum", hero_max_dmg, '\n')
 
@@ -31,4 +40,4 @@ while dragon_hp > 0 and hero_hp > 0:
         print("Our valiant hero has slain the dragon, with a final attack of", hero_attack, "!")
         break
     print("The hero does", hero_attack, "damage and the dragon has", dragon_hp, "hp left", '\n')
-    input("Round over. The hero is still alive! Let's continue the fight! Press any key to continue:", '\n')
+    input("Round over. The hero is still alive! Let's continue the fight! Press any key to continue:")
